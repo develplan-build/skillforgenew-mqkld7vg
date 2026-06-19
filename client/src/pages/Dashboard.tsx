@@ -84,10 +84,10 @@ export function Dashboard() {
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="var(--border-color)" vertical={false} />
-                <XAxis dataKey="name" stroke="var(--text-secondary)" fontSize={12} tickLine={false} axisLine={false} />
-                <YAxis stroke="var(--text-secondary)" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(value) => `€${value}`} />
+                <XAxis dataKey="name" stroke="var(--text-secondary)" axisLine={false} tickLine={false} />
+                <YAxis stroke="var(--text-secondary)" axisLine={false} tickLine={false} tickFormatter={(value) => `€${value}`} />
                 <Tooltip 
-                  contentStyle={{ background: 'var(--bg-card)', border: '1px solid var(--border-color)', borderRadius: '8px' }}
+                  contentStyle={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-color)', borderRadius: '8px' }}
                   itemStyle={{ color: 'var(--text-primary)' }}
                 />
                 <Area type="monotone" dataKey="value" stroke="var(--accent)" strokeWidth={3} fillOpacity={1} fill="url(#colorValue)" />
@@ -97,19 +97,19 @@ export function Dashboard() {
         </div>
 
         <div className="card">
-          <h3 style={{ marginBottom: '1.5rem' }}>Completamento Corsi</h3>
+          <h3 style={{ marginBottom: '1.5rem' }}>Stato Corsi</h3>
           <div style={{ height: 300 }}>
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={completionData}>
                 <CartesianGrid strokeDasharray="3 3" stroke="var(--border-color)" vertical={false} />
-                <XAxis dataKey="name" stroke="var(--text-secondary)" fontSize={12} tickLine={false} axisLine={false} />
-                <YAxis stroke="var(--text-secondary)" fontSize={12} tickLine={false} axisLine={false} />
+                <XAxis dataKey="name" stroke="var(--text-secondary)" axisLine={false} tickLine={false} />
+                <YAxis stroke="var(--text-secondary)" axisLine={false} tickLine={false} />
                 <Tooltip 
-                  contentStyle={{ background: 'var(--bg-card)', border: '1px solid var(--border-color)', borderRadius: '8px' }}
-                  cursor={{ fill: 'var(--bg-hover)' }}
+                  contentStyle={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-color)', borderRadius: '8px' }}
+                  cursor={{ fill: 'var(--bg-secondary)' }}
                 />
                 <Bar dataKey="completati" name="Completati" fill="var(--accent)" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="inCorso" name="In Corso" fill="var(--text-muted)" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="inCorso" name="In Corso" fill="var(--text-secondary)" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
